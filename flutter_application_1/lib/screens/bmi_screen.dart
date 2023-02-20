@@ -66,17 +66,23 @@ class _BmiScreenState extends State<BmiScreen> {
               isSelected: isSelected,
               onPressed: toggleMeasure,
             ),
-            TextField(
-              controller: txtHeight,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                hintText: heightMessage,
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextField(
+                controller: txtHeight,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  hintText: heightMessage,
+                ),
               ),
             ),
-            TextField(
-              controller: txtWeight,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(hintText: weightMessage),
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextField(
+                controller: txtWeight,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(hintText: weightMessage),
+              ),
             ),
             ElevatedButton(
                 onPressed: findBMI,
