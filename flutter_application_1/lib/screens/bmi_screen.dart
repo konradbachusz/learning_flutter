@@ -84,6 +84,12 @@ class _BmiScreenState extends State<BmiScreen> {
                     style: TextStyle(
                       fontSize: fontSize,
                     ))),
+            ElevatedButton(
+                onPressed: reset,
+                child: Text('Reset',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                    ))),
             Text(result,
                 style: TextStyle(
                   fontSize: fontSize,
@@ -121,6 +127,12 @@ class _BmiScreenState extends State<BmiScreen> {
     }
     setState(() {
       result = 'Your BMI is ' + bmi.toStringAsFixed(2);
+    });
+  }
+
+  void reset() {
+    setState(() {
+      result = '';
     });
   }
 }
