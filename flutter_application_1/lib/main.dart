@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/bmi_screen.dart';
-import 'package:flutter_application_1/screens/weather_screen.dart';
+import 'screens/bmi_screen.dart';
 import 'screens/intro_screen.dart';
 
 void main() {
@@ -16,10 +15,10 @@ class GlobeApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.indigo),
       routes: {
         '/': (context) => IntroScreen(),
-        '/bmi': (context) => BmiScreen(),
-        '/weather': (context) => WeatherScreen(),
+        '/bmi': (context) => BmiScreen()
       },
       initialRoute: '/',
     );
+    //home: IntroScreen());
   }
 }

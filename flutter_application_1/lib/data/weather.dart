@@ -6,8 +6,8 @@ class Weather {
   int pressure = 0;
   int humidity = 0;
 
-  Weather(this.name, this.description, this.temperature, this.perceived,
-      this.pressure, this.humidity);
+  Weather(this.name, this.description, this.temperature, this.perceived, this.pressure,
+      this.humidity);
 
   Weather.fromJson(Map<String, dynamic> weatherMap) {
     this.name = weatherMap['name'] ?? '';

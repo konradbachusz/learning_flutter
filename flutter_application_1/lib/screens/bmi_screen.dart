@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../shared/menu_bottom.dart';
-import '../shared/menu_drawer.dart';
+import 'package:hello_flutter/shared/menu_bottom.dart';
+import 'package:hello_flutter/shared/menu_drawer.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);
@@ -66,23 +66,17 @@ class _BmiScreenState extends State<BmiScreen> {
               isSelected: isSelected,
               onPressed: toggleMeasure,
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: TextField(
-                controller: txtHeight,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: heightMessage,
-                ),
+            TextField(
+              controller: txtHeight,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                hintText: heightMessage,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: TextField(
-                controller: txtWeight,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: weightMessage),
-              ),
+            TextField(
+              controller: txtWeight,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(hintText: weightMessage),
             ),
             ElevatedButton(
                 onPressed: findBMI,

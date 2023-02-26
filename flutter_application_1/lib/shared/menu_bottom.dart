@@ -22,7 +22,10 @@ class MenuBottom extends StatelessWidget {
         }
       },
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
         BottomNavigationBarItem(icon: Icon(Icons.monitor_weight), label: 'BMI'),
         BottomNavigationBarItem(icon: Icon(Icons.sunny), label: 'Weather'),
       ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/weather_screen.dart';
+import '../screens/weather_screen.dart';
 import '../screens/bmi_screen.dart';
 import '../screens/intro_screen.dart';
 
@@ -27,26 +27,30 @@ class MenuDrawer extends StatelessWidget {
         decoration: BoxDecoration(color: Colors.blueGrey),
         child: Text('Globo Fitness',
             style: TextStyle(color: Colors.white, fontSize: 28))));
-    menuTitles.forEach((String element) {
+    menuTitles.forEach((element) {
       Widget screen = Container();
       menuItems.add(ListTile(
-          title: Text(element, style: TextStyle(fontSize: 18)),
-          onTap: () {
-            switch (element) {
-              case 'Home':
-                screen = IntroScreen();
-                break;
-              case 'BMI Calculator':
-                screen = BmiScreen();
-                break;
-              case 'Weather':
-                screen = WeatherScreen();
-                break;
-            }
-            Navigator.of(context).pop();
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => screen));
-          }));
+        title: Text(
+          element,
+          style: TextStyle(fontSize: 18),
+        ),
+        onTap: () {
+          switch (element) {
+            case 'Home':
+              screen = IntroScreen();
+              break;
+            case 'BMI Calculator':
+              screen = BmiScreen();
+              break;
+            case 'Weather':
+              screen = WeatherScreen();
+              break;
+          }
+          Navigator.of(context).pop();
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => screen));
+        },
+      ));
     });
     return menuItems;
   }

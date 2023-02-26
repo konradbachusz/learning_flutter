@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '../shared/menu_bottom.dart';
-import 'package:http/http.dart';
-import '../shared/menu_drawer.dart';
-import '../data/weather.dart';
+import 'package:hello_flutter/data/weather.dart';
 import '../data/http_helper.dart';
 
 class WeatherScreen extends StatefulWidget {
@@ -13,7 +10,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  Weather result = Weather('', '', 0, 0, 0, 0);
+  Weather result = Weather('','', 0, 0, 0, 0);
   final TextEditingController txtPlace = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -57,25 +54,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Widget weatherRow(String label, String value) {
     Widget row = Padding(
-        padding: EdgeInsets.symmetric(vertical: 16),
-        child: Row(
-          children: [
-            Expanded(
-                flex: 3,
-                child: Text(
-                  label,
-                  style: TextStyle(
-                      fontSize: 20, color: Theme.of(context).hintColor),
-                )),
-            Expanded(
-                flex: 4,
-                child: Text(
-                  value,
-                  style: TextStyle(
-                      fontSize: 20, color: Theme.of(context).primaryColor),
-                ))
-          ],
-        ));
+      padding: EdgeInsets.symmetric(vertical: 16),
+      child: Row(
+      children: [
+        Expanded(flex: 3, child: Text(label, style: TextStyle(fontSize: 20, color: Theme.of(context).hintColor),)),
+        Expanded(flex: 4,  child:Text(value, style: TextStyle(fontSize: 20, color: Theme.of(context).primaryColor),))
+      ],
+    ));
     return row;
   }
 }
