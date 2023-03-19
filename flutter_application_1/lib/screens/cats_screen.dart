@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(OrangeContainer());
+void main() => runApp(CatsScreen());
 
-class OrangeContainer extends StatelessWidget {
+class CatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,7 +3,7 @@ import '../screens/weather_screen.dart';
 import '../screens/bmi_screen.dart';
 import '../screens/intro_screen.dart';
 import '../screens/sessions_screen.dart';
-import '../screens/orange_screen.dart';
+import '../screens/cats_screen.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -52,7 +52,7 @@ class MenuDrawer extends StatelessWidget {
               screen = SessionsScreen();
               break;
             case 'Orange Container':
-              screen = OrangeContainer();
+              screen = CatsScreen();
               break;
           }
           Navigator.of(context).pop();
