@@ -16,9 +16,9 @@ class OrangeContainer extends StatelessWidget {
                 image: NetworkImage(
                     'https://img1.goodfon.com/wallpaper/nbig/8/8a/savanna-derevo-solnce-zakat.jpg')),
           ),
-          child: Center(
-            child: SingleChildScrollView(
-                child: Column(
+          child: SingleChildScrollView(
+              child: Center(
+            child: Column(
               children: [
                 Container(
                   width: 200,
@@ -69,8 +69,8 @@ class OrangeContainer extends StatelessWidget {
                   ),
                 )
               ],
-            )),
-          ),
+            ),
+          )),
         ));
   }
 }
