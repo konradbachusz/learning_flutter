@@ -7,6 +7,7 @@ import '../screens/sessions_screen.dart';
 import '../screens/cats_screen.dart';
 import '../screens/area_calculator_screen.dart';
 import '../screens/squares_screen.dart';
+import '../screens/productivity_timer.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -28,7 +29,8 @@ class MenuDrawer extends StatelessWidget {
       'Training',
       'Cats screen',
       'Area Calculator',
-      'Squares'
+      'Squares',
+      'Productivity Timer'
     ];
     List<Widget> menuItems = [];
     menuItems.add(DrawerHeader(
@@ -64,6 +66,9 @@ class MenuDrawer extends StatelessWidget {
               break;
             case 'Squares':
               screen = SquaresScreen();
+              break;
+            case 'Productivity Timer':
+              screen = ProductivityTimerScreen();
               break;
           }
           Navigator.of(context).pop();
