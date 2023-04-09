@@ -36,6 +36,12 @@ class Home extends StatelessWidget {
             children: createSquares(5),
           ),
           Row(
+              verticalDirection: VerticalDirection.down,
+              // textDirection: TextDirection.rtl,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Container(width: 60, height: 60)]),
+          Row(
             verticalDirection: VerticalDirection.down,
             // textDirection: TextDirection.rtl,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,7 +68,7 @@ class Home extends StatelessWidget {
           // flex: i,
           child: Container(
               color: colors[i],
-              width: 30,
+              width: 60,
               height: 60,
               child: Text(i.toString())));
       i++;
