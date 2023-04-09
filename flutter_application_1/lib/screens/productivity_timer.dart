@@ -20,6 +20,7 @@ class ProductivityTimerScreen extends StatelessWidget {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   width: 140,
@@ -99,6 +100,57 @@ class ProductivityTimerScreen extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                 )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 200,
+                  height: 40,
+                  margin: EdgeInsets.all(10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: red_color,
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {},
+                      child: const Text('Stop',
+                          style: TextStyle(color: (Colors.white))),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  height: 40,
+                  margin: EdgeInsets.all(10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: light_green_color,
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {},
+                      child: const Text('Restart',
+                          style: TextStyle(color: (Colors.white))),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: 400,
+              height: 200,
+              margin: EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4d87b0f4-ae26-4b18-835c-af3a7ce1349f/ddab0ew-016e40bb-5aff-4239-b27b-e07e9803ca20.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkODdiMGY0LWFlMjYtNGIxOC04MzVjLWFmM2E3Y2UxMzQ5ZlwvZGRhYjBldy0wMTZlNDBiYi01YWZmLTQyMzktYjI3Yi1lMDdlOTgwM2NhMjAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-CIz4lxAK4BBdzM2O0ZjzxOZWii0GhnRFSCzM6DANAE')),
+              ),
+            )
           ],
         ),
       )),
