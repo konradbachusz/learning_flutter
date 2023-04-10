@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 void main() => runApp(ProductivityTimerScreen());
 
@@ -7,6 +8,7 @@ class ProductivityTimerScreen extends StatelessWidget {
   var light_green_color = Color.fromARGB(255, 99, 181, 79);
   var dark_green_color = Color.fromARGB(255, 53, 104, 40);
   var button_box_radius = 5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,11 +91,7 @@ class ProductivityTimerScreen extends StatelessWidget {
                 ),
                 child: Container(
                   width: 180,
-                  child: Align(
-                      alignment: Alignment.center,
-                      child: Text('25:00',
-                          style:
-                              TextStyle(fontSize: 60, color: (Colors.grey)))),
+                  child: Align(alignment: Alignment.center, child: OtpTimer()),
                   height: 180,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -155,5 +153,46 @@ class ProductivityTimerScreen extends StatelessWidget {
         ),
       )),
     );
+  }
+}
+
+//Actual timer
+
+class OtpTimer extends StatefulWidget {
+  @override
+  _OtpTimerState createState() => _OtpTimerState();
+}
+
+class _OtpTimerState extends State<OtpTimer> {
+  final interval = const Duration(seconds: 1);
+
+  final int timerMaxSeconds = 1500;
+
+  int currentSeconds = 0;
+
+  String get timerText =>
+      '${((timerMaxSeconds - currentSeconds) ~/ 60).toString().padLeft(2, '0')}: ${((timerMaxSeconds - currentSeconds) % 60).toString().padLeft(2, '0')}';
+
+  startTimeout([int? milliseconds]) {
+    var duration = interval;
+    Timer.periodic(duration, (timer) {
+      setState(() {
+        print(timer.tick);
+        currentSeconds = timer.tick;
+        if (timer.tick >= timerMaxSeconds) timer.cancel();
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    startTimeout();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(timerText,
+        style: TextStyle(fontSize: 60, color: (Colors.grey)));
   }
 }
