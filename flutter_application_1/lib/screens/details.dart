@@ -12,7 +12,7 @@ class Details extends StatelessWidget {
   Details(this.drinkPath, this.drinkTag);
   @override
   Widget build(BuildContext context) {
-    timeDilation = 10;
+    timeDilation = 2;
     double width = MediaQuery.of(context).size.width * 0.8;
     double height = MediaQuery.of(context).size.height * 0.6;
 
@@ -21,10 +21,13 @@ class Details extends StatelessWidget {
     pop() {
       Navigator.of(context).pop();
     }
-   return Scaffold(
-      appBar: AppBar(title: Text('Hero Animation'),),
-      body:Center(
-       child: Util.buildHeroRadialDestination(drinkPath, drinkTag, width, height, pop)
-    ));      
+
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Hero Animation'),
+        ),
+        body: Center(
+            child: Util.buildHeroRadialDestination(
+                drinkPath, drinkTag, width, height, pop)));
   }
 }
