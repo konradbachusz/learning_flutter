@@ -46,7 +46,7 @@ class ArtRoute extends StatelessWidget {
         title: Text('Navigating art'),
         actions: [
           PopupMenuButton(
-            //icon: Icon(Icons.image),
+            icon: Icon(Icons.image),
             itemBuilder: (BuildContext context) {
               return ArtUtil.menuItems.map((String item) {
                 return PopupMenuItem<String>(
@@ -69,14 +69,11 @@ class ArtRoute extends StatelessWidget {
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
-              label: ArtUtil.CARAVAGGIO, 
-              icon: Icon(Icons.art_track)),
+              label: ArtUtil.CARAVAGGIO, icon: Icon(Icons.art_track)),
           BottomNavigationBarItem(
-              label: ArtUtil.MONET, 
-              icon: Icon(Icons.art_track)),
+              label: ArtUtil.MONET, icon: Icon(Icons.art_track)),
           BottomNavigationBarItem(
-              label: ArtUtil.VANGOGH, 
-              icon: Icon(Icons.art_track)),
+              label: ArtUtil.VANGOGH, icon: Icon(Icons.art_track)),
         ],
         onTap: (value) {
           String artist = ArtUtil.menuItems[value];

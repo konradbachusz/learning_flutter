@@ -36,24 +36,33 @@ class ArtScreen extends StatelessWidget {
           body: TabBarView(
             children: [
               Container(
+                width: 50,
+                height: 50,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(ArtUtil.IMG_CARAVAGGIO),
-                      fit: BoxFit.cover),
+                    scale: 1.5,
+                    image: NetworkImage(ArtUtil.IMG_CARAVAGGIO),
+                  ),
                 ),
               ),
               Container(
+                width: 50,
+                height: 50,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(ArtUtil.IMG_MONET),
-                      fit: BoxFit.cover),
+                    scale: 1.5,
+                    image: NetworkImage(ArtUtil.IMG_MONET),
+                  ),
                 ),
               ),
               Container(
+                width: 50,
+                height: 50,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(ArtUtil.IMG_VANGOGH),
-                      fit: BoxFit.cover),
+                    scale: 1.5,
+                    image: NetworkImage(ArtUtil.IMG_VANGOGH),
+                  ),
                 ),
               ),
             ],
