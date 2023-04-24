@@ -1,25 +1,33 @@
 void pretendFileIO() {
   print('File IO: Started');
-  print('File IO: File contents => Hello Futures');
+  print('File IO: File Contents => Hello world');
   print('File IO: Done');
 }
 
-Future<String> pretendHTTPRequest() async {
+Future<String> pretendHTTPRequest({bool withError = false}) async {
   print('HTTP Request: Started');
-  return Future.delayed(Duration(seconds: 1), () => 'A JSON placeholder');
+  if (withError) {
+    return Future.error('Pretend HTTP Timeout');
+  } else {
+    return Future.delayed(Duration(seconds: 1), () => 'A JSON placeholder');
+  }
 }
 
-Future<String> pretendDatabaseQuery(String searchTerm) async {
-  print('Database query for $searchTerm: Started');
-  return Future.delayed(
-      Duration(seconds: 2),
-      () =>
-          'Database query: Resultset => ID: 1, FirstName: Steve, LastName: Stephens');
+void pretendDatabaseQuery(String searchTerm) {
+  print('Database query: Started for $searchTerm');
+  print(
+      'Database query: Resultset => ID: 1, FirstName: Steve, LastName: Stephens');
+  print('Database query: Done');
 }
 
 void main(List<String> arguments) async {
   pretendFileIO();
-  var response = await pretendHTTPRequest();
-  var query = await pretendDatabaseQuery(response);
-  print(query);
+  try {
+    var response = await pretendHTTPRequest(withError: false);
+    print('HTTP Request: Response => $response');
+    print('HTTP Request: Done');
+    pretendDatabaseQuery(response);
+  } catch (e) {
+    print('An error occurred: $e');
+  }
 }
